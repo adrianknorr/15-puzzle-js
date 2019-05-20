@@ -66,7 +66,7 @@ body {
   align-items: center;
 }
 
-h2 a {
+h2 a{
   text-decoration: none;
   text-decoration: underline;
   color: #00adb5;
@@ -101,7 +101,7 @@ header {
   display: inline-block;
   transform: translate(-50%, 0);
   left: 50%;
-  width: 400px;
+  width: 420px;
 }
 
 #control button {
@@ -112,12 +112,78 @@ header {
   border: none;
   outline: none;
   height: 30px;
-  width: 198px;
-
+  width: 200px;
+  transition: 0.15s;
+  margin: 0 auto;
 }
 
 #control button:hover {
-  background-color: #ddd
+  background-color: #009199;
+}
+
+.hidden {
+  display: none;
+}
+
+.popup{
+  position: fixed; /* Stay in place */
+  z-index: 99; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#popup-content {
+  transition: 0.15s;
+  transform: translate(-50%, 0);
+  position: relative;
+  left: 50%;
+  top: 220px;
+  width: 500px;
+  transition: 1s;
+  border: 5px dashed #00adb5;
+  background-color: #eeeeee;
+  width: 500px;
+  text-align: center;
+  background-clip: padding-box;
+}
+
+#popup-content h1 {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+#popup-content h2 {
+  color: #00adb5;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#popup-content button {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  height: 70px;
+  width: 150px;
+  background-color: #00adb5;
+  color: white;
+  outline: none;
+  transition: 0.15s;
+  border: none;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+#popup-content button:not(:last-child) {
+  margin-right: 10px;
+}
+
+#popup-content button:hover {
+  background-color: #009199;
 }
 
 .block:nth-child(even) {

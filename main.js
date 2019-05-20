@@ -39,7 +39,7 @@ class Block {
     }
   }
 
-  async checkWin() {
+  checkWin() {
     let countRight = 0;
     for (var i = 0; i < 15; i++) {
       if (block[i].rightPlace) {
@@ -49,10 +49,7 @@ class Block {
       }
     }
     if (countRight === 15) {
-      setTimeout(() => {
-        alert('Congratulation, you are the 1.000.000th winner! Click OK to get an Audi A7 for free!');
-        alert('(This is a joke)');
-      }, 200);
+      document.getElementById('popup').classList.remove('hidden');
     } else {
       countRight = 0;
     }
@@ -189,6 +186,7 @@ function scramble() {
       y = 3;
     }
     block[i].position(x, y);
+    block[i].rightPlace = false;
   }
 
 }
@@ -237,6 +235,13 @@ document.getElementById('block13').addEventListener("click", function () {
 });
 document.getElementById('block14').addEventListener("click", function () {
   block[14].checkMove();
+});
+document.getElementById('great').addEventListener("click", function () {
+  document.getElementById('popup').classList.add('hidden');
+});
+document.getElementById('again').addEventListener("click", function () {
+  document.getElementById('popup').classList.add('hidden');
+  scramble();
 });
 //document.getElementById('block15').addEventListener("click", function () {
 //  checkMove();
