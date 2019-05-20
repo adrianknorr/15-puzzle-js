@@ -1,0 +1,215 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* html, body, div, span, applet, object, iframe,
+p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+} */
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #eeeeee;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 a {
+  text-decoration: none;
+  text-decoration: underline;
+  color: #00adb5;
+}
+
+h1 {
+  color: #222831;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+}
+
+#game {
+  width: 400px;
+  position: absolute;
+  top: 200px;
+  border: 5px dashed #00adb5;
+}
+
+#board {
+  position: relative;
+  background-color: #eeeeee;
+  width: 400px;
+  height: 400px;
+}
+
+#control {
+  position: absolute;
+  margin-top: 10px;
+  display: inline-block;
+  transform: translate(-50%, 0);
+  left: 50%;
+  width: 400px;
+}
+
+#control button {
+  background-color: #00adb5;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 198px;
+
+}
+
+#control button:hover {
+  background-color: #ddd
+}
+
+.block:nth-child(even) {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  background-color: #393e46;
+  color: white;
+  position: absolute;
+  outline: none;
+  transition: 0.15s;
+  border: none;
+}
+
+.block:nth-child(odd) {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  background-color: #222831;
+  color: white;
+  position: absolute;
+  outline: none;
+  transition: 0.15s;
+  border: none;
+}
+
+#block0 {
+  z-index: 15;
+}
+
+#block1 {
+  z-index: 14;
+}
+
+#block2 {
+  z-index: 13;
+}
+
+#block3 {
+  z-index: 12;
+}
+
+#block4 {
+  z-index: 11;
+}
+
+#block5 {
+  z-index: 10;
+}
+
+#block6 {
+  z-index: 9;
+}
+
+#block7 {
+  z-index: 8;
+}
+
+#block8 {
+  z-index: 7;
+}
+
+#block9 {
+  z-index: 6;
+}
+
+#block10 {
+  z-index: 5;
+}
+
+#block11 {
+  z-index: 4;
+}
+
+#block12 {
+  z-index: 3;
+}
+
+#block13 {
+  z-index: 2;
+}
+
+#block14 {
+  z-index: 1;
+}
+
+#block15 {
+  z-index: 0;
+  background-color: transparent;
+  /* visibility: hidden; */
+}
