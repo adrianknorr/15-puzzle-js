@@ -58,9 +58,9 @@ class Block {
 
   moveUp() {
     this.y = this.y - 1;
-    document.getElementById(this.id).style.top = this.y * 100 + 'px';
+    this.el.style.top = this.y * 100 + 'px';
     block[15].y = block[15].y + 1;
-    document.getElementById(block[15].id).style.top = block[15].y * 100 + 'px';
+    block[15].el.style.top = block[15].y * 100 + 'px';
     if (this.x === this.xStart && this.y === this.yStart) {
       this.rightPlace = true;
       this.checkWin();
@@ -72,9 +72,9 @@ class Block {
 
   moveDown() {
     this.y = this.y + 1;
-    document.getElementById(this.id).style.top = this.y * 100 + 'px';
+    this.el.style.top = this.y * 100 + 'px';
     block[15].y = block[15].y - 1;
-    document.getElementById(block[15].id).style.top = block[15].y * 100 + 'px';
+    block[15].el.style.top = block[15].y * 100 + 'px';
     if (this.x === this.xStart && this.y === this.yStart) {
       this.rightPlace = true;
       this.checkWin();
@@ -86,9 +86,9 @@ class Block {
 
   moveLeft() {
     this.x = this.x - 1;
-    document.getElementById(this.id).style.left = this.x * 100 + 'px';
+    this.el.style.left = this.x * 100 + 'px';
     block[15].x = block[15].x + 1;
-    document.getElementById(block[15].id).style.left = block[15].x * 100 + 'px';
+    block[15].el.style.left = block[15].x * 100 + 'px';
     if (this.x === this.xStart && this.y === this.yStart) {
       this.rightPlace = true;
       this.checkWin();
@@ -100,9 +100,9 @@ class Block {
 
   moveRight() {
     this.x = this.x + 1;
-    document.getElementById(this.id).style.left = this.x * 100 + 'px';
+    this.el.style.left = this.x * 100 + 'px';
     block[15].x = block[15].x - 1;
-    document.getElementById(block[15].id).style.left = block[15].x * 100 + 'px';
+    block[15].el.style.left = block[15].x * 100 + 'px';
     if (this.x === this.xStart && this.y === this.yStart) {
       this.rightPlace = true;
       this.checkWin();

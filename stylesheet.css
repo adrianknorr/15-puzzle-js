@@ -215,67 +215,67 @@ header {
   border: none;
 }
 
-#0 {
+.block[data-id="0"]{
   z-index: 15;
 }
 
-#1 {
+.block[data-id="1"]{
   z-index: 14;
 }
 
-#2 {
+.block[data-id="2"]{
   z-index: 13;
 }
 
-#3 {
+.block[data-id="3"]{
   z-index: 12;
 }
 
-#4 {
+.block[data-id="4"]{
   z-index: 11;
 }
 
-#5 {
+.block[data-id="5"]{
   z-index: 10;
 }
 
-#6 {
+.block[data-id="6"]{
   z-index: 9;
 }
 
-#7 {
+.block[data-id="7"]{
   z-index: 8;
 }
 
-#8 {
+.block[data-id="8"]{
   z-index: 7;
 }
 
-#9 {
+.block[data-id="9"]{
   z-index: 6;
 }
 
-#10 {
+.block[data-id="10"] {
   z-index: 5;
 }
 
-#11 {
+.block[data-id="11"] {
   z-index: 4;
 }
 
-#12 {
+.block[data-id="12"] {
   z-index: 3;
 }
 
-#13 {
+.block[data-id="13"] {
   z-index: 2;
 }
 
-#14 {
+.block[data-id="14"] {
   z-index: 1;
 }
 
-#15 {
+.block[data-id="15"] {
   z-index: 0;
   background-color: transparent;
   /* visibility: hidden; */
