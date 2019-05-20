@@ -5,7 +5,7 @@ class Block {
     this.yStart = _y;
     this.idStart = _id;
     this.id = _id;
-    this.el = document.querySelector(`.block[data-id=${_id}]`);
+    this.el = document.querySelector(`.block[data-id='${_id}']`);
     this.sort();
   }
 
