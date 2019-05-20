@@ -4,7 +4,8 @@ class Block {
     this.xStart = _x;
     this.yStart = _y;
     this.idStart = _id;
-    this.id = 'block' + _id;
+    this.id = _id;
+    this.el = document.querySelector(`.block[data-id=${_id}]`);
     this.sort();
   }
 
@@ -12,16 +13,16 @@ class Block {
     this.x = this.xStart;
     this.y = this.yStart;
     this.rightPlace = true;
-    document.getElementById(this.id).style.left = this.x * 100 + 'px';
-    document.getElementById(this.id).style.top = this.y * 100 + 'px';
+    this.el.style.left = this.x * 100 + 'px';
+    this.el.style.top = this.y * 100 + 'px';
     //console.log('Sorting done: x ' + this.x * 100 + ' y ' + this.y * 100 + ' id ' + this.id);
   }
 
-  position(x_, y_) {
-    this.x = x_;
-    this.y = y_;
-    document.getElementById(this.id).style.left = this.x * 100 + 'px';
-    document.getElementById(this.id).style.top = this.y * 100 + 'px';
+  setPosition(_x, _y) {
+    this.x = _x;
+    this.y = _y;
+    this.el.style.left = this.x * 100 + 'px';
+    this.el.style.top = this.y * 100 + 'px';
     //console.log('Scrambling done: x ' + this.x * 100 + ' y ' + this.y * 100 + ' id ' + this.id);
   }
 
@@ -141,19 +142,6 @@ function sortAll() {
   }
 }
 
-// function swap() {
-//   document.getElementById('block0').style.zIndex = 1;
-//   document.getElementById('block1').style.zIndex = 0;
-//   for (i = 0; i < 100; i += 0.01) {
-//     document.getElementById('block0').style.marginRight = i;
-//     document.getElementById('block1').style.marginLeft = i;
-//   }
-//   document.getElementById('block0').style.order = 1;
-//   document.getElementById('block1').style.order = 2;
-//   document.getElementById('block0').style.marginRight = 0;
-//   document.getElementById('block1').style.marginLeft = 0;
-// }
-
 function scramble() {
   var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   var temp;
@@ -185,57 +173,66 @@ function scramble() {
       x = numVal - 12
       y = 3;
     }
-    block[i].position(x, y);
+    block[i].setPosition(x, y);
     block[i].rightPlace = false;
   }
 
 }
 
-document.getElementById('block0').addEventListener("click", function () {
-  block[0].checkMove();
+var blockList = document.querySelectorAll(".block");
+
+blockList.forEach(blockEl => {
+  var id = blockEl.getAttribute("data-id");
+  blockEl.addEventListener("click", () => {
+    block[id].checkMove();
+  })
 });
-document.getElementById('block1').addEventListener("click", function () {
-  block[1].checkMove();
-});
-document.getElementById('block2').addEventListener("click", function () {
-  block[2].checkMove();
-});
-document.getElementById('block3').addEventListener("click", function () {
-  block[3].checkMove();
-});
-document.getElementById('block4').addEventListener("click", function () {
-  block[4].checkMove();
-});
-document.getElementById('block5').addEventListener("click", function () {
-  block[5].checkMove();
-});
-document.getElementById('block6').addEventListener("click", function () {
-  block[6].checkMove();
-});
-document.getElementById('block7').addEventListener("click", function () {
-  block[7].checkMove();
-});
-document.getElementById('block8').addEventListener("click", function () {
-  block[8].checkMove();
-});
-document.getElementById('block9').addEventListener("click", function () {
-  block[9].checkMove();
-});
-document.getElementById('block10').addEventListener("click", function () {
-  block[10].checkMove();
-});
-document.getElementById('block11').addEventListener("click", function () {
-  block[11].checkMove();
-});
-document.getElementById('block12').addEventListener("click", function () {
-  block[12].checkMove();
-});
-document.getElementById('block13').addEventListener("click", function () {
-  block[13].checkMove();
-});
-document.getElementById('block14').addEventListener("click", function () {
-  block[14].checkMove();
-});
+
+// document.getElementById('block0').addEventListener("click", function () {
+//   block[0].checkMove();
+// });
+// document.getElementById('block1').addEventListener("click", function () {
+//   block[1].checkMove();
+// });
+// document.getElementById('block2').addEventListener("click", function () {
+//   block[2].checkMove();
+// });
+// document.getElementById('block3').addEventListener("click", function () {
+//   block[3].checkMove();
+// });
+// document.getElementById('block4').addEventListener("click", function () {
+//   block[4].checkMove();
+// });
+// document.getElementById('block5').addEventListener("click", function () {
+//   block[5].checkMove();
+// });
+// document.getElementById('block6').addEventListener("click", function () {
+//   block[6].checkMove();
+// });
+// document.getElementById('block7').addEventListener("click", function () {
+//   block[7].checkMove();
+// });
+// document.getElementById('block8').addEventListener("click", function () {
+//   block[8].checkMove();
+// });
+// document.getElementById('block9').addEventListener("click", function () {
+//   block[9].checkMove();
+// });
+// document.getElementById('block10').addEventListener("click", function () {
+//   block[10].checkMove();
+// });
+// document.getElementById('block11').addEventListener("click", function () {
+//   block[11].checkMove();
+// });
+// document.getElementById('block12').addEventListener("click", function () {
+//   block[12].checkMove();
+// });
+// document.getElementById('block13').addEventListener("click", function () {
+//   block[13].checkMove();
+// });
+// document.getElementById('block14').addEventListener("click", function () {
+//   block[14].checkMove();
+// });
 document.getElementById('great').addEventListener("click", function () {
   document.getElementById('popup').classList.add('hidden');
 });
